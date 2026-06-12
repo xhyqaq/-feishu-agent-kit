@@ -1,0 +1,7 @@
+[runtime]
+state_path = "state/state.json"
+audit_path = "logs/audit.jsonl"
+
+[feishu]
+app_id_env = "FEISHU_APP_ID"
+app_secret_env = "FEISHU_APP_SECRET"
