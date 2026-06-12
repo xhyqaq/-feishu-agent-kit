@@ -1,4 +1,4 @@
-# Feishu Agent Bot Template
+# Feishu Agent Kit
 
 用于创建和治理飞书 Agent 机器人的项目模板。
 
@@ -53,7 +53,7 @@ cc-connect
 生成一个新机器人项目：
 
 ```bash
-cd /Users/xhy/Project/feishu-agent-bot-template
+cd /Users/xhy/Project/feishu-agent-kit
 ./scripts/create-bot.sh my-agent-bot /Users/xhy/Project/my-agent-bot
 ```
 
@@ -82,7 +82,7 @@ my-agent-bot/
 ## 仓库结构
 
 ```text
-feishu-agent-bot-template/
+feishu-agent-kit/
   AGENTS.md
   README.md
   docs/

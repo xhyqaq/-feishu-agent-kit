@@ -1,6 +1,6 @@
 # {{BOT_NAME}}
 
-这是一个基于 Feishu Agent Bot Template 生成的机器人项目。
+这是一个基于 Feishu Agent Kit 生成的机器人项目。
 
 ## 目录
 
