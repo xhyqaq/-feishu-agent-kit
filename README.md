@@ -55,7 +55,7 @@ cc-connect
 **必需依赖**
 
 - 飞书开放平台机器人：提供消息入口、卡片消息、按钮回调和应用凭据。
-- cc-connect：连接飞书和本地/服务器 Agent，负责 project、command、cron、card callback 等桥接能力。
+- cc-connect：连接飞书和本地/服务器 Agent，负责 project、command、cron、card callback 等桥接能力。源码：https://github.com/chenhg5/cc-connect
 - Codex 或 Claude Code：作为自然语言 Agent，处理用户开放请求、复杂排查和代码修改。
 - Python 3.11+：模板内置 CLI 和测试骨架使用 Python 标准库实现。
 - Git：用于管理生成后的机器人项目。
@@ -154,7 +154,7 @@ feishu-agent-kit/
 
 **官方规范索引**
 
-[docs/official-references.md](docs/official-references.md) 收录飞书/Lark、cc-connect、Codex 和 Claude Code 的官方文档入口。开发消息格式、卡片 JSON、按钮回调、cc-connect 配置或 Agent 运行方式时，应先查这个索引里的官方文档，避免 AI 只凭记忆生成过时语法。
+[docs/official-references.md](docs/official-references.md) 收录飞书/Lark、cc-connect 源码和文档、Codex、Claude Code 的官方入口。开发消息格式、卡片 JSON、按钮回调、cc-connect 配置或 Agent 运行方式时，应先查这个索引里的官方文档，避免 AI 只凭记忆生成过时语法。
 
 **技术规范**
 
