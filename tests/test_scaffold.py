@@ -7,6 +7,14 @@ from pathlib import Path
 
 
 class ScaffoldTests(unittest.TestCase):
+    def test_template_repository_has_agent_rules_at_root(self) -> None:
+        repo = Path(__file__).resolve().parents[1]
+        root_rules = (repo / "AGENTS.md").read_text(encoding="utf-8")
+
+        self.assertIn("模板仓库工作目录", root_rules)
+        self.assertIn("template/AGENTS.md", root_rules)
+        self.assertIn("template/feishu-runtime/AGENTS.md", root_rules)
+
     def test_create_bot_generates_runnable_project(self) -> None:
         repo = Path(__file__).resolve().parents[1]
         with tempfile.TemporaryDirectory() as tmp:
@@ -20,8 +28,11 @@ class ScaffoldTests(unittest.TestCase):
             )
 
             self.assertTrue((target / "agent-bot").exists())
+            self.assertTrue((target / "AGENTS.md").exists())
+            self.assertTrue((target / "feishu-runtime/AGENTS.md").exists())
             self.assertIn("demo-agent", (target / "README.md").read_text(encoding="utf-8"))
             self.assertNotIn("{{BOT_NAME}}", (target / "AGENTS.md").read_text(encoding="utf-8"))
+            self.assertNotIn("{{BOT_NAME}}", (target / "feishu-runtime/AGENTS.md").read_text(encoding="utf-8"))
 
             subprocess.run(
                 ["python3", "-m", "unittest", "discover", "-s", "tests", "-v"],
