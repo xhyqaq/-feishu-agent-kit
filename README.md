@@ -48,6 +48,41 @@ cc-connect
 
 核心边界是：确定性逻辑进入 CLI 和 shell wrapper，自然语言理解交给 Agent，高风险写操作必须经过确认、执行、验证和审计。
 
+## 依赖项目和运行时
+
+这个仓库本身只提供规范、模板和脚手架，不内置飞书网关、Agent CLI 或生产隔离环境。使用时需要配合以下组件。
+
+**必需依赖**
+
+- 飞书开放平台机器人：提供消息入口、卡片消息、按钮回调和应用凭据。
+- cc-connect：连接飞书和本地/服务器 Agent，负责 project、command、cron、card callback 等桥接能力。
+- Codex 或 Claude Code：作为自然语言 Agent，处理用户开放请求、复杂排查和代码修改。
+- Python 3.11+：模板内置 CLI 和测试骨架使用 Python 标准库实现。
+- Git：用于管理生成后的机器人项目。
+
+**生产部署依赖**
+
+- Linux/systemd：推荐用 systemd 管理 cc-connect 或项目相关服务。
+- Docker：当 Agent 需要容器化隔离时使用，例如让 Codex 只挂载当前项目目录。
+- OS 权限工具：例如 `setpriv`、专用低权限用户、文件属主和 ACL，用于实现硬权限边界。
+- secret 管理方式：例如 systemd `EnvironmentFile`、独立 secret 文件或平台密钥管理，不要把密钥写进 Git。
+
+**可选依赖**
+
+- 业务 API 或内部系统 SDK：由具体机器人决定，例如监控系统、账号系统、审批系统、知识库系统。
+- 飞书 OpenAPI 封装工具：如果机器人需要主动查询或操作更多飞书资源，可以在生成项目后接入。
+- 额外 Agent skills：如果某类业务有稳定 API，可以沉淀成 skill 供 Agent 使用。
+
+依赖关系可以理解为：
+
+```text
+feishu-agent-kit
+  -> 生成机器人项目骨架
+  -> 接入 cc-connect
+  -> cc-connect 接入飞书和 Agent CLI
+  -> 机器人项目按需接入业务 API / 内部系统
+```
+
 ## 快速开始
 
 生成一个新机器人项目：
