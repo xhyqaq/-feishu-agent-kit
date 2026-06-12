@@ -119,8 +119,10 @@ my-agent-bot/
 ```text
 feishu-agent-kit/
   AGENTS.md
+  CLAUDE.md
   README.md
   docs/
+    official-references.md
     technical-standard.md
     project-template.md
     runtime-permissions.md
@@ -128,7 +130,9 @@ feishu-agent-kit/
     create-bot.sh
   template/
     AGENTS.md
+    CLAUDE.md
     feishu-runtime/AGENTS.md
+    feishu-runtime/CLAUDE.md
     agent_bot/
     bin/
     config/
@@ -144,7 +148,13 @@ feishu-agent-kit/
 - `template/AGENTS.md`：生成新机器人项目时复制到新项目根目录的规则文件。
 - `template/feishu-runtime/AGENTS.md`：生成新机器人项目时复制到运行态目录的规则文件，供飞书 Agent 的 `work_dir` 使用。
 
+`CLAUDE.md` 只做一件事：引用同目录的 `AGENTS.md`。这样 Claude Code 和 Codex 能共享同一份规则入口，避免两套规范漂移。
+
 ## 三层产物
+
+**官方规范索引**
+
+[docs/official-references.md](docs/official-references.md) 收录飞书/Lark、cc-connect、Codex 和 Claude Code 的官方文档入口。开发消息格式、卡片 JSON、按钮回调、cc-connect 配置或 Agent 运行方式时，应先查这个索引里的官方文档，避免 AI 只凭记忆生成过时语法。
 
 **技术规范**
 

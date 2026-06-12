@@ -81,6 +81,8 @@ CLI 不负责：
 
 用户可见运维或业务结果优先使用飞书 Card JSON 2.0：
 
+修改飞书消息发送、消息类型、卡片 JSON、卡片按钮或回调逻辑前，必须先查看 [official-references.md](official-references.md) 中的飞书/Lark 官方文档链接，确认当前字段结构、组件语法和回调协议。
+
 ```json
 {
   "schema": "2.0",

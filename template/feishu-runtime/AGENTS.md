@@ -24,6 +24,11 @@
 ./agent-bot action --payload <payload>
 ```
 
+## 官方规范
+
+- 涉及飞书消息格式、Card JSON、按钮回调或 cc-connect 行为时，先查看 `../docs/official-references.md` 中的官方文档链接。
+- 如果官方文档与当前模板示例不一致，以官方文档为准，并提醒维护者更新模板。
+
 ## 安全边界
 
 - 只读排查可以直接执行。

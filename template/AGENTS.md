@@ -2,6 +2,7 @@
 - 这个目录是 `{{BOT_NAME}}` 的开发和维护目录，不是飞书用户对话的运行目录。
 - cc-connect 的飞书运行入口必须使用 `./feishu-runtime` 作为 `work_dir`；运行态规则写在 `feishu-runtime/AGENTS.md`。
 - 不要把本目录的开发能力、测试、代码审查或实现过程暴露给飞书用户。
+- 涉及飞书消息格式、Card JSON、按钮回调、cc-connect 配置或 Agent 运行方式时，先读取 `docs/official-references.md` 并按官方文档核对，不要只凭记忆写。
 
 ## 第一性原理边界
 

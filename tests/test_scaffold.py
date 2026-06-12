@@ -29,8 +29,15 @@ class ScaffoldTests(unittest.TestCase):
 
             self.assertTrue((target / "agent-bot").exists())
             self.assertTrue((target / "AGENTS.md").exists())
+            self.assertTrue((target / "CLAUDE.md").exists())
             self.assertTrue((target / "feishu-runtime/AGENTS.md").exists())
+            self.assertTrue((target / "feishu-runtime/CLAUDE.md").exists())
+            self.assertTrue((target / "docs/official-references.md").exists())
             self.assertIn("demo-agent", (target / "README.md").read_text(encoding="utf-8"))
+            self.assertEqual("@AGENTS.md\n", (target / "CLAUDE.md").read_text(encoding="utf-8"))
+            self.assertEqual("@AGENTS.md\n", (target / "feishu-runtime/CLAUDE.md").read_text(encoding="utf-8"))
+            self.assertIn("docs/official-references.md", (target / "AGENTS.md").read_text(encoding="utf-8"))
+            self.assertIn("docs/official-references.md", (target / "feishu-runtime/AGENTS.md").read_text(encoding="utf-8"))
             self.assertNotIn("{{BOT_NAME}}", (target / "AGENTS.md").read_text(encoding="utf-8"))
             self.assertNotIn("{{BOT_NAME}}", (target / "feishu-runtime/AGENTS.md").read_text(encoding="utf-8"))
 

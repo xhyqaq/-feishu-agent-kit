@@ -19,6 +19,7 @@ bot-project/
   config/
     targets.example.toml
   docs/
+    official-references.md
     runtime-permissions.md
   feishu-runtime/
     AGENTS.md
@@ -34,6 +35,7 @@ bot-project/
 - `bin/`：`cc-connect command/cron` 的 shell 入口。
 - `config/`：非敏感配置模板。
 - `docs/`：部署、权限和架构文档。
+- `docs/official-references.md`：飞书/Lark、cc-connect 和 Agent 工具的官方文档索引，供 AI 开发时查证规范。
 - `tests/`：回归测试。
 
 ## cc-connect 配置示例
